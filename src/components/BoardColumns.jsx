@@ -8,7 +8,9 @@ export default function BoardColumns({ columns }) {
       {columns.map((col, idx) => (
         <Column key={idx} title={col.title} tasks={col.tasks} />
       ))}
+      
       <AddColumn />
+
     </div>
   );
 }

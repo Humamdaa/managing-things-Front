@@ -24,7 +24,7 @@ const Layout = () => {
         {/* Bottom section */}
         <div className="flex flex-1 overflow-hidden">
           {/* Sidebar */}
-          <div className="w-[300px] bg-[#F4F7FD]  bg-white overflow-y-auto box-border">
+          <div className=" bg-[#F4F7FD] overflow-y-auto box-border">
             <Sidebar />
           </div>
 
