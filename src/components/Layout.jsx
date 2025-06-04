@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TopNav from './TopNav';
 import SecondNav from './SecondNav';
 import Sidebar from './Sidebar/Sidebar';
 import { BoardProvider } from '../contexts/BoardContext';
 import MainContent from './Main';
+import LayoutSkeleton from './UI/skeletons/SkeletonLayout';
+
 const Layout = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Replace with your actual data loading logic
+    const timer = setTimeout(() => setIsLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) return <LayoutSkeleton />;
+
   return (
     <BoardProvider>
       <div className="h-screen flex flex-col bg-white">
